@@ -1,17 +1,19 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Package</id>
+    <id>Lodash.Net</id>
     <version>1.0.0</version>
     <authors>Shir Brass</authors>
     <owners>Shir Brass</owners>
     <projectUrl>https://github.com/shirbr510/lodash.net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Package description</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <description>jsut like Lodash, but in .Net</description>
     <copyright>Copyright (c) 2016 Shir Brass</copyright>
     <tags></tags>
     <dependencies>
     </dependencies>
   </metadata>
+  <files>
+    <file src="..\src\Lodash.Net\bin\Debug\netstandard1.6\Lodash.Net.dll" target="lib/netstandard1" />
+  </files>
 </package>
