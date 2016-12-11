@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Lodash.Net.Workers.Abstract
 {
-    interface ILodashSeq
+    public interface ILodashSeq
     {
     }
 }
