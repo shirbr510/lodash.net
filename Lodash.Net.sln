@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
 		global.json = global.json
+		nuget\lodash.net.nuspec = nuget\lodash.net.nuspec
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Lodash.Net", "src\Lodash.Net\Lodash.Net.xproj", "{EB29581F-BF2D-447A-B89B-2AC9B6168C4A}"
@@ -16,6 +18,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0177B21E-2D28-4BF8-9149-BB9AE5BFC9DB}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Lodash.Net.Tests", "test\Lodash.Net.Tests\Lodash.Net.Tests.xproj", "{3AA24CF6-5980-4B39-A785-C01AB6144C87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{1CF9FD84-69E7-47C9-A739-758A6858AC7C}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\lodash.net.nuspec = nuget\lodash.net.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,5 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EB29581F-BF2D-447A-B89B-2AC9B6168C4A} = {78092CDD-6970-4859-A62C-705B7633FBB9}
 		{3AA24CF6-5980-4B39-A785-C01AB6144C87} = {0177B21E-2D28-4BF8-9149-BB9AE5BFC9DB}
+		{1CF9FD84-69E7-47C9-A739-758A6858AC7C} = {737AB16B-337B-4589-8258-E4B6BCC5EF06}
 	EndGlobalSection
 EndGlobal

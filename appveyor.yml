@@ -11,3 +11,9 @@ build:
   
 test_script:
 - dotnet test "test\Lodash.Net.Tests"
+
+deploy:
+  - provider: NuGet
+    symbol_server: https://ci.appveyor.com/nuget/shirbr510-1wiqn5ubbjj2/api/v2/package
+    api_key:
+      secure: fjt064i4jaky1o5oi4em7i5v
