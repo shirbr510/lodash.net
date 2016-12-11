@@ -10,4 +10,4 @@ build:
   verbosity: minimal
   
 test_script:
-- dotnet test
+- dotnet test "test\Lodash.Net.Tests"
