@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 before_build:
-- cmd: nuget restore
+- appveyor-retry dotnet restore -v Minimal
 
 build:
   verbosity: minimal
