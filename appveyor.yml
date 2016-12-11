@@ -14,6 +14,10 @@ test_script:
 
 deploy:
   - provider: NuGet
-    symbol_server: https://ci.appveyor.com/nuget/shirbr510-1wiqn5ubbjj2/api/v2/package
+    symbol_server: https://ci.appveyor.com/nuget/lodash-net-tcsgl9wnwcs4/api/v2/package
     api_key:
       secure: fjt064i4jaky1o5oi4em7i5v
+
+nuget:
+  account_feed: true
+  project_feed: true
