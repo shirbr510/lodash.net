@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace Lodash.Net.Tests.Static
 {
     [TestFixture]
-    public class LodashTests
+    public class _Tests
     {
         [Test]
         public void Instance_HundredTimes_ReturnsSameInstance()
