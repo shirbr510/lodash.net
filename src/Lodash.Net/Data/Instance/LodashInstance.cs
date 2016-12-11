@@ -30,19 +30,19 @@ namespace Lodash.Net.Data.Instance
 
         public T Max<T>(IEnumerable<T> enumerable) => _lodashMath.Max(enumerable);
 
-        public T MaxBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee) => _lodashMath.MaxBy(enumerable, iteratee);
+        public TResult MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => _lodashMath.MaxBy(enumerable, iteratee);
 
         public T MaxBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.MaxBy(enumerable, iteratee);
 
-        public T Mean<T>(IEnumerable<T> enumerable) => _lodashMath.Mean(enumerable);
+        public double Mean<T>(IEnumerable<T> enumerable) => _lodashMath.Mean(enumerable);
 
-        public T MeanBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee) => _lodashMath.MeanBy(enumerable, iteratee);
+        public double MeanBy<T>(IEnumerable<T> enumerable, Func<T, double> iteratee) => _lodashMath.MeanBy(enumerable, iteratee);
 
-        public T MeanBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.MeanBy(enumerable, iteratee);
+        public double MeanBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.MeanBy(enumerable, iteratee);
 
         public T Min<T>(IEnumerable<T> enumerable) => _lodashMath.Min(enumerable);
 
-        public T MinBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee) => _lodashMath.MinBy(enumerable, iteratee);
+        public TResult MinBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => _lodashMath.MinBy(enumerable, iteratee);
 
         public T MinBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.MinBy(enumerable, iteratee);
 
@@ -52,10 +52,10 @@ namespace Lodash.Net.Data.Instance
 
         public double Substract(double minuend, double subtrahend) => _lodashMath.Substract(minuend, subtrahend);
 
-        public T Sum<T>(IEnumerable<T> enumerable) => _lodashMath.Sum(enumerable);
+        public double Sum<T>(IEnumerable<T> enumerable) => _lodashMath.Sum(enumerable);
 
-        public T SumBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee) => _lodashMath.SumBy(enumerable, iteratee);
+        public double SumBy<T>(IEnumerable<T> enumerable, Func<T, double> iteratee) => _lodashMath.SumBy(enumerable, iteratee);
 
-        public T SumBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.SumBy(enumerable, iteratee);
+        public double SumBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.SumBy(enumerable, iteratee);
     }
 }

@@ -56,7 +56,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The iteratee invoked per element</param>
         /// <returns>Returns the maximum value.</returns>
-        T MaxBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee);
+        TResult MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee);
 
         /// <summary>
         /// This method is like _.max except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked. The iteratee is invoked with one argument: (value).
@@ -73,7 +73,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <since>4.0.0</since>
         /// <param name="enumerable">The array to iterate over.</param>
         /// <returns>Returns the mean.</returns>
-        T Mean<T>(IEnumerable<T> enumerable);
+        double Mean<T>(IEnumerable<T> enumerable);
 
         /// <summary>
         /// This method is like _.mean except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked. The iteratee is invoked with one argument: (value).
@@ -82,7 +82,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The iteratee invoked per element</param>
         /// <returns>Returns the mean.</returns>
-        T MeanBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee);
+        double MeanBy<T>(IEnumerable<T> enumerable, Func<T, double> iteratee);
 
         /// <summary>
         /// This method is like _.mean except that it accepts iteratee which is invoked for each element in array to generate the value to be averaged. The iteratee is invoked with one argument: (value).
@@ -91,7 +91,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The property iteratee invoked per element</param>
         /// <returns>Returns the mean.</returns>
-        T MeanBy<T>(IEnumerable<T> enumerable, string iteratee);
+        double MeanBy<T>(IEnumerable<T> enumerable, string iteratee);
 
         /// <summary>
         /// Computes the minimum value of array. If array is empty or falsey, null is returned.
@@ -108,7 +108,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The iteratee invoked per element</param>
         /// <returns>Returns the minimum value.</returns>
-        T MinBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee);
+        TResult MinBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee);
 
         /// <summary>
         /// This method is like _.min except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked. The iteratee is invoked with one argument: (value).
@@ -152,7 +152,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <since>3.4.0</since>
         /// <param name="enumerable">The array to iterate over.</param>
         /// <returns>Returns the sum.</returns>
-        T Sum<T>(IEnumerable<T> enumerable);
+        double Sum<T>(IEnumerable<T> enumerable);
 
         /// <summary>
         /// This method is like _.sum except that it accepts iteratee which is invoked for each element in array to generate the value to be summed. The iteratee is invoked with one argument: (value).
@@ -161,7 +161,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The iteratee invoked per element</param>
         /// <returns>Returns the sum.</returns>
-        T SumBy<T>(IEnumerable<T> enumerable, Func<T, object> iteratee);
+        double SumBy<T>(IEnumerable<T> enumerable, Func<T, double> iteratee);
 
         /// <summary>
         /// This method is like _.sum except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked. The iteratee is invoked with one argument: (value).
@@ -170,6 +170,6 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The property iteratee invoked per element</param>
         /// <returns>Returns the sum.</returns>
-        T SumBy<T>(IEnumerable<T> enumerable, string iteratee);
+        double SumBy<T>(IEnumerable<T> enumerable, string iteratee);
     }
 }

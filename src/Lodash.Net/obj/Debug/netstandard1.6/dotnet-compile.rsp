@@ -57,6 +57,7 @@
 --reference:C:\Users\Shir\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 C:\Git\lodash.net\src\Lodash.Net\Data\Instance\LodashInstance.cs
 C:\Git\lodash.net\src\Lodash.Net\Data\Instance\Abstract\ILodashInstance.cs
+C:\Git\lodash.net\src\Lodash.Net\Extensions\TypeExtensions.cs
 C:\Git\lodash.net\src\Lodash.Net\Properties\AssemblyInfo.cs
 C:\Git\lodash.net\src\Lodash.Net\Static\_.cs
 C:\Git\lodash.net\src\Lodash.Net\Workers\LodashDate.cs
