@@ -1,4 +1,7 @@
 version: 1.0.{build}
+configuration:
+- Debug
+- Release
 
 before_build:
 - appveyor-retry dotnet restore -v Minimal
@@ -7,4 +10,4 @@ build:
   verbosity: minimal
   
 test_script:
-- cmd: dotnet test
+- dotnet test
