@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Lodash.Net.Data.Instance.Abstract;
+using Lodash.Net.Static;
 using NUnit.Framework;
 
 namespace Lodash.Net.Tests.Static
@@ -17,7 +18,7 @@ namespace Lodash.Net.Tests.Static
             //Act
             for (var i = 0; i < callCount; i++)
             {
-                results[i] = Net.Static.Lodash.Instance;
+                results[i] = _.Instance;
             }
 
             //Assert
@@ -28,7 +29,7 @@ namespace Lodash.Net.Tests.Static
         public void Instance_Once_DoesNotReturnNull()
         {
             //Arrange + Act
-            var result = Net.Static.Lodash.Instance;
+            var result = _.Instance;
 
             //Assert
             Assert.That(result, Is.Not.Null);

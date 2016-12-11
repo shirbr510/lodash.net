@@ -4,11 +4,11 @@ using Lodash.Net.Data.Instance.Abstract;
 
 namespace Lodash.Net.Static
 {
-    public static class Lodash
+    public static class _
     {
         private static readonly Lazy<ILodashInstance> LodashLazy;
 
-        static Lodash()
+        static _()
         {
             LodashLazy = new Lazy<ILodashInstance>(() => new LodashInstance());
         }
