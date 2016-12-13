@@ -12,10 +12,20 @@ namespace Lodash.Net.Data.Instance
 
         private readonly ILodashMath _lodashMath;
 
+        private readonly ILodashNumber _lodashNumber;
+
         public LodashInstance()
         {
-            _lodashMath = new LodashMath();
             _lodashDate = new LodashDate();
+            _lodashMath = new LodashMath();
+            _lodashNumber = new LodashNumber();
+        }
+
+        public LodashInstance(ILodashDate lodashDate, ILodashMath lodashMath, ILodashNumber lodashNumber)
+        {
+            _lodashDate = lodashDate;
+            _lodashMath = lodashMath;
+            _lodashNumber = lodashNumber;
         }
 
         public long Now() => _lodashDate.Now();
@@ -57,5 +67,13 @@ namespace Lodash.Net.Data.Instance
         public double SumBy<T>(IEnumerable<T> enumerable, Func<T, double> iteratee) => _lodashMath.SumBy(enumerable, iteratee);
 
         public double SumBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.SumBy(enumerable, iteratee);
+
+        public double Clamp(double number, double lower, double upper) => _lodashNumber.Clamp(number, lower, upper);
+
+        public bool InRange(double number, double start, double upper) => _lodashNumber.InRange(number, start, upper);
+
+        public bool InRange(double number, double upper) => _lodashNumber.InRange(number, upper);
+
+        public double Random(double lower = 0, double upper = 1, bool floating = false) => _lodashNumber.Random(lower, upper, floating);
     }
 }
