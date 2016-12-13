@@ -9,6 +9,8 @@ namespace Lodash.Net.Tests.Workers
     [TestFixture]
     public class LodashDateTests
     {
+        #region Now
+
         [Test]
         public void Now_RunFiftyTimes_NoResultEqual()
         {
@@ -50,6 +52,8 @@ namespace Lodash.Net.Tests.Workers
             Assert.That(epochNow.Millisecond, Is.EqualTo(datetimeNow.Millisecond));
             //Asserting up to milliseconds and not ticks because further then that is impossible
         }
+
+        #endregion
 
     }
 }

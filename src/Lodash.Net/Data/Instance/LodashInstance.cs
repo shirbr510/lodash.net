@@ -60,12 +60,23 @@ namespace Lodash.Net.Data.Instance
 
         public double SumBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.SumBy(enumerable, iteratee);
 
-        public double Clamp(double number, double lower, double upper) => _lodashNumber.Clamp(number, lower, upper);
-
         public bool InRange(double number, double start, double upper) => _lodashNumber.InRange(number, start, upper);
 
         public bool InRange(double number, double upper) => _lodashNumber.InRange(number, upper);
 
-        public double Random(double lower = 0, double upper = 1, bool floating = false) => _lodashNumber.Random(lower, upper, floating);
+        public T Clamp<T>(T number, T lower, T upper) where T : IComparable<T> => _lodashNumber.Clamp(number, lower, upper);
+
+        public bool InRange<T>(T number, T start, T upper) where T : IComparable<T> => _lodashNumber.InRange(number, start, upper);
+
+        public bool InRange<T>(T number, T upper) where T : IComparable<T> => _lodashNumber.InRange(number, upper);
+
+        public double Random(double upper) => _lodashNumber.Random(upper);
+
+        public double Random(double lower, double upper) => _lodashNumber.Random(lower, upper);
+
+        public double Random(double upper, bool floating) => _lodashNumber.Random(upper, floating);
+
+        public double Random(double lower, double upper, bool floating) => _lodashNumber.Random(lower, upper, floating);
+
     }
 }
