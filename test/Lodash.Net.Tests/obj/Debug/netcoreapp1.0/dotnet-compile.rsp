@@ -18,6 +18,8 @@
 --reference:C:\Users\Shir\.nuget\packages\Microsoft.DiaSymReader\1.0.8\lib\netstandard1.1\Microsoft.DiaSymReader.dll
 --reference:C:\Users\Shir\.nuget\packages\Microsoft.DotNet.InternalAbstractions\1.0.0\lib\netstandard1.3\Microsoft.DotNet.InternalAbstractions.dll
 --reference:C:\Users\Shir\.nuget\packages\Microsoft.DotNet.ProjectModel\1.0.0-rc3-003121\lib\netstandard1.6\Microsoft.DotNet.ProjectModel.dll
+--reference:C:\Users\Shir\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.1.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll
+--reference:C:\Users\Shir\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 --reference:C:\Users\Shir\.nuget\packages\Microsoft.Extensions.DependencyModel\1.0.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll
 --reference:C:\Users\Shir\.nuget\packages\Microsoft.Extensions.Testing.Abstractions\1.0.0-preview2-003121\lib\netstandard1.6\Microsoft.Extensions.Testing.Abstractions.dll
 --reference:C:\Users\Shir\.nuget\packages\Microsoft.VisualBasic\10.0.1\ref\netstandard1.1\Microsoft.VisualBasic.dll
@@ -38,7 +40,7 @@
 --reference:C:\Users\Shir\.nuget\packages\System.Collections\4.0.11\ref\netstandard1.3\System.Collections.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Collections.Concurrent\4.0.12\ref\netstandard1.3\System.Collections.Concurrent.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Collections.Immutable\1.2.0\lib\netstandard1.0\System.Collections.Immutable.dll
---reference:C:\Users\Shir\.nuget\packages\System.ComponentModel\4.0.1\ref\netstandard1.0\System.ComponentModel.dll
+--reference:C:\Users\Shir\.nuget\packages\System.ComponentModel\4.3.0\ref\netstandard1.0\System.ComponentModel.dll
 --reference:C:\Users\Shir\.nuget\packages\System.ComponentModel.Annotations\4.1.0\ref\netstandard1.4\System.ComponentModel.Annotations.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Console\4.0.0\ref\netstandard1.3\System.Console.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Diagnostics.Debug\4.0.11\ref\netstandard1.3\System.Diagnostics.Debug.dll
@@ -79,7 +81,7 @@
 --reference:C:\Users\Shir\.nuget\packages\System.Reflection.TypeExtensions\4.1.0\ref\netstandard1.5\System.Reflection.TypeExtensions.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Resources.Reader\4.0.0\lib\netstandard1.0\System.Resources.Reader.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Resources.ResourceManager\4.0.1\ref\netstandard1.0\System.Resources.ResourceManager.dll
---reference:C:\Users\Shir\.nuget\packages\System.Runtime\4.1.0\ref\netstandard1.5\System.Runtime.dll
+--reference:C:\Users\Shir\.nuget\packages\System.Runtime\4.3.0\ref\netstandard1.5\System.Runtime.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Runtime.Extensions\4.1.0\ref\netstandard1.5\System.Runtime.Extensions.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Runtime.Handles\4.0.1\ref\netstandard1.3\System.Runtime.Handles.dll
 --reference:C:\Users\Shir\.nuget\packages\System.Runtime.InteropServices\4.1.0\ref\netstandard1.5\System.Runtime.InteropServices.dll
