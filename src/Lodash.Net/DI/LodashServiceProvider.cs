@@ -7,13 +7,25 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Lodash.Net.DI
 {
-    public static class LodashServiceProvider
+    public class LodashServiceProvider
     {
-        public static IServiceProvider GetServiceProvider()
+        private static readonly Lazy<IServiceProvider> LazyServiceProvider;
+
+        static LodashServiceProvider()
+        {
+            LazyServiceProvider = new Lazy<IServiceProvider>(InitializeServiceProvider);
+        }
+
+        public static IServiceProvider Instance => LazyServiceProvider.Value;
+
+        private static IServiceProvider InitializeServiceProvider()
         {
             var services = new ServiceCollection();
 
-            services.AddTransient<ILodashInstance, LodashInstance>();
+            //Singletons
+            services.AddSingleton<ILodashInstance, LodashInstance>();
+
+            //Transients
             services.AddTransient<ILodashDate, LodashDate>();
             services.AddTransient<ILodashMath, LodashMath>();
             services.AddTransient<ILodashNumber, LodashNumber>();

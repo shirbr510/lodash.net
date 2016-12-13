@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Lodash.Net.Data.Instance.Abstract;
-using Lodash.Net.Workers;
 using Lodash.Net.Workers.Abstract;
 
 namespace Lodash.Net.Data.Instance
@@ -13,13 +12,6 @@ namespace Lodash.Net.Data.Instance
         private readonly ILodashMath _lodashMath;
 
         private readonly ILodashNumber _lodashNumber;
-
-        public LodashInstance()
-        {
-            _lodashDate = new LodashDate();
-            _lodashMath = new LodashMath();
-            _lodashNumber = new LodashNumber();
-        }
 
         public LodashInstance(ILodashDate lodashDate, ILodashMath lodashMath, ILodashNumber lodashNumber)
         {

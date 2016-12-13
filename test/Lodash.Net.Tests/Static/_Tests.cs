@@ -6,13 +6,14 @@ using NUnit.Framework;
 namespace Lodash.Net.Tests.Static
 {
     [TestFixture]
+    // ReSharper disable once InconsistentNaming
     public class _Tests
     {
         [Test]
         public void Instance_HundredTimes_ReturnsSameInstance()
         {
             //Arrange
-            var callCount = 100;
+            const int callCount = 100;
             var results = new ILodashInstance[callCount];
 
             //Act
