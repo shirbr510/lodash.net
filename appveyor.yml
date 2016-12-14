@@ -13,8 +13,9 @@ test:
 # assemblies to test - optional
   assemblies:
     - '**\*.Tests.dll'
-  before_test:
-    - appveyor-retry dotnet restore -v Minimal
+
+before_test:
+  - appveyor-retry dotnet restore -v Minimal
 
 deploy:
   - provider: NuGet
