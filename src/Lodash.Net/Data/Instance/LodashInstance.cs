@@ -47,7 +47,7 @@ namespace Lodash.Net.Data.Instance
 
         public T Min<T>(IEnumerable<T> enumerable) => _lodashMath.Min(enumerable);
 
-        public TResult MinBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => _lodashMath.MinBy(enumerable, iteratee);
+        public TSource MinBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => _lodashMath.MinBy(enumerable, iteratee);
 
         public T MinBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.MinBy(enumerable, iteratee);
 
