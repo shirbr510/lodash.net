@@ -3,6 +3,10 @@ configuration:
 - Debug
 - Release
 
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: WZ09E3h59VffG+4kCjSZl7rRGPDoXqJ7TDBhdbyVX3tvkYySYlKhugnZ5agsoZqo
+
 before_build:
 - dotnet restore
 
@@ -11,6 +15,9 @@ build:
 
 test_script:
 - dotnet test "test\Lodash.Net.Tests"
+
+after_test::
+- cmd: .\coveralls.ps1
 
 deploy:
   - provider: NuGet
