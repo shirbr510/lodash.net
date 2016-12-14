@@ -1,3 +1,4 @@
+nuget install NUnit -Version 3.5.0 -OutputDirectory tools
 nuget install NUnit.Console -Version 3.5.0 -OutputDirectory tools
 nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
 nuget install coveralls.net -Version 0.7.0 -OutputDirectory tools
