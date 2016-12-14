@@ -264,6 +264,27 @@ namespace Lodash.Net.Tests.Workers
             Assert.That(results.Select(item => item).All(item => item.IsInteger()), Is.True);
         }
 
+        [Test]
+        public void Random_MinusSeven_ShouldReturnNumberBetweenZeroAndMinusSevenNonFloating()
+        {
+            //Arrange
+            const int upper = -7;
+            const int callCount = 1000000;
+            var results = new double[callCount];
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+
+            //Act
+            for (var i = 0; i < callCount; i++)
+            {
+                results[i] = lodashNumber.Random(upper);
+            }
+
+            //Assert
+            Assert.That(results.Max(), Is.LessThan(0));
+            Assert.That(results.Max(), Is.GreaterThanOrEqualTo(upper));
+            Assert.That(results.Select(item => item).All(item => item.IsInteger()), Is.True);
+        }
+
         #endregion
     }
 }

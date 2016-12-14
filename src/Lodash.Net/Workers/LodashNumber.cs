@@ -44,7 +44,7 @@ namespace Lodash.Net.Workers
         public double Random(double lower, double upper, bool floating)
         {
             var result = lower + _random.Random() * upper;
-            return floating ? result : _lodashMath.Floor(result);
+            return floating ? result : (result < 0 ? _lodashMath.Ceil(result) : _lodashMath.Floor(result));
         }
 
         private static void ValidateLowerSmallerThenUpper<T>(ref T lower, ref T upper) where T : IComparable<T>
