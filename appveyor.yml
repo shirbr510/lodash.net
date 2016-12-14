@@ -18,6 +18,10 @@ before_build:
 build:
   verbosity: minimal
 
+test:
+  assemblies:
+    - test\Lodash.Net.Tests\bin\Debug\netcoreapp1.0\Lodash.Net.Tests.dll"
+
 after_test::
 - cmd: .\coveralls.ps1
 
