@@ -4,7 +4,7 @@ configuration:
 - Release
 
 before_build:
-- appveyor-retry dotnet restore -v Minimal
+- nuget-restore
 
 build:
   verbosity: minimal
@@ -13,9 +13,6 @@ test:
 # assemblies to test - optional
   assemblies:
     - '**\*.Tests.dll'
-
-before_test:
-  - appveyor-retry dotnet restore -v Minimal
 
 deploy:
   - provider: NuGet
