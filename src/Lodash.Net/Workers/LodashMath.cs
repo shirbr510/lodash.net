@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using Lodash.Net.Extensions;
 using Lodash.Net.Workers.Abstract;
 
@@ -10,7 +9,7 @@ namespace Lodash.Net.Workers
 {
     public class LodashMath : ILodashMath
     {
-        private ILodashUtil _lodashUtil;
+        private readonly ILodashUtil _lodashUtil;
 
         public LodashMath(ILodashUtil lodashUtil)
         {
@@ -51,7 +50,7 @@ namespace Lodash.Net.Workers
 
         public T MaxBy<T>(IEnumerable<T> enumerable, string iteratee)
         {
-            Func<T, object> func = item => typeof(T).GetTypeInfo().GetProperty(iteratee).GetValue(item);
+            var func = _lodashUtil.Property<T, object>(iteratee);
             return MaxBy(enumerable, func);
         }
 
