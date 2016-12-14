@@ -9,10 +9,8 @@ before_build:
 build:
   verbosity: minimal
 
-test:
-# assemblies to test - optional
-  assemblies:
-    - '**\*.Tests.dll'
+test_script:
+- dotnet test "test\Lodash.Net.Tests"
 
 deploy:
   - provider: NuGet
