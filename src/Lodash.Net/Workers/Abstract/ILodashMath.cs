@@ -56,7 +56,7 @@ namespace Lodash.Net.Workers.Abstract
         /// <param name="enumerable">The array to iterate over.</param>
         /// <param name="iteratee">The iteratee invoked per element</param>
         /// <returns>Returns the maximum value.</returns>
-        TResult MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee);
+        TSource MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee);
 
         /// <summary>
         /// This method is like _.max except that it accepts iteratee which is invoked for each element in array to generate the criterion by which the value is ranked. The iteratee is invoked with one argument: (value).

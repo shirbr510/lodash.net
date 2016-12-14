@@ -112,4 +112,6 @@ C:\Git\lodash.net\test\Lodash.Net.Tests\Program.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Properties\AssemblyInfo.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Static\_Tests.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Workers\LodashDateTests.cs
+C:\Git\lodash.net\test\Lodash.Net.Tests\Workers\LodashMathTests.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Workers\LodashNumberTests.cs
+C:\Git\lodash.net\test\Lodash.Net.Tests\Workers\Stubs\NumberStub.cs

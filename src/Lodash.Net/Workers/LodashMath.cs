@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Lodash.Net.Extensions;
 using Lodash.Net.Workers.Abstract;
 
@@ -9,6 +10,13 @@ namespace Lodash.Net.Workers
 {
     public class LodashMath : ILodashMath
     {
+        private ILodashUtil _lodashUtil;
+
+        public LodashMath(ILodashUtil lodashUtil)
+        {
+            _lodashUtil = lodashUtil;
+        }
+
         public double Add(double augend, double addend) => augend + addend;
 
         public double Ceil(double number, int precision = 0)
@@ -27,12 +35,24 @@ namespace Lodash.Net.Workers
 
         public T Max<T>(IEnumerable<T> enumerable) => enumerable.Max();
 
-        public TResult MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => enumerable.Max(iteratee);
+        public TSource MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee)
+        {
+            var sources = enumerable as IList<TSource> ?? enumerable.ToList();
+            var result = sources.FirstOrDefault();
+            foreach (var item in sources)
+            {
+                if (Comparer<TResult>.Default.Compare(iteratee.Invoke(result), iteratee.Invoke(item)) < 0)
+                {
+                    result = item;
+                }
+            }
+            return result;
+        }
 
         public T MaxBy<T>(IEnumerable<T> enumerable, string iteratee)
         {
             Func<T, object> func = item => typeof(T).GetTypeInfo().GetProperty(iteratee).GetValue(item);
-            return (T)MaxBy(enumerable, func);
+            return MaxBy(enumerable, func);
         }
 
         public double Mean<T>(IEnumerable<T> enumerable) => typeof(T).IsNumeric() ? enumerable.Cast<double>().Average() : double.NaN;

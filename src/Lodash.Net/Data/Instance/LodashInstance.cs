@@ -13,11 +13,14 @@ namespace Lodash.Net.Data.Instance
 
         private readonly ILodashNumber _lodashNumber;
 
-        public LodashInstance(ILodashDate lodashDate, ILodashMath lodashMath, ILodashNumber lodashNumber)
+        private readonly ILodashUtil _lodashUtil;
+
+        public LodashInstance(ILodashDate lodashDate, ILodashMath lodashMath, ILodashNumber lodashNumber, ILodashUtil lodashUtil)
         {
             _lodashDate = lodashDate;
             _lodashMath = lodashMath;
             _lodashNumber = lodashNumber;
+            _lodashUtil = lodashUtil;
         }
 
         public long Now() => _lodashDate.Now();
@@ -32,7 +35,7 @@ namespace Lodash.Net.Data.Instance
 
         public T Max<T>(IEnumerable<T> enumerable) => _lodashMath.Max(enumerable);
 
-        public TResult MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => _lodashMath.MaxBy(enumerable, iteratee);
+        public TSource MaxBy<TSource, TResult>(IEnumerable<TSource> enumerable, Func<TSource, TResult> iteratee) => _lodashMath.MaxBy(enumerable, iteratee);
 
         public T MaxBy<T>(IEnumerable<T> enumerable, string iteratee) => _lodashMath.MaxBy(enumerable, iteratee);
 
@@ -78,5 +81,8 @@ namespace Lodash.Net.Data.Instance
 
         public double Random(double lower, double upper, bool floating) => _lodashNumber.Random(lower, upper, floating);
 
+        public Func<TObject, TProperty> Property<TObject, TProperty>(params string[] path) => _lodashUtil.Property<TObject, TProperty>(path);
+
+        Func<object, object> ILodashUtil.Property(params string[] path) => _lodashUtil.Property(path);
     }
 }
