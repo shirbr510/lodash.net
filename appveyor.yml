@@ -13,9 +13,9 @@ test:
 # assemblies to test - optional
   assemblies:
     - '**\*.tests.dll'
+
   
-test_script:
-- dotnet test "test\Lodash.Net.Tests"
+
 
 deploy:
   - provider: NuGet
