@@ -12,10 +12,7 @@ build:
 test:
 # assemblies to test - optional
   assemblies:
-    - '**\*.tests.dll'
-
-  
-
+    - '**\*.Tests.dll'
 
 deploy:
   - provider: NuGet
