@@ -20,7 +20,7 @@ build:
 
 test_script:
 - dotnet test "test\Lodash.Net.Tests"
-- cmd: .\coveralls.ps1
+- cmd: .\coveralls.cmd
 
 deploy:
   - provider: NuGet
