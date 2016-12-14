@@ -8,6 +8,11 @@ before_build:
 
 build:
   verbosity: minimal
+
+test:
+# assemblies to test - optional
+  assemblies:
+    - '**\*.tests.dll'
   
 test_script:
 - dotnet test "test\Lodash.Net.Tests"
