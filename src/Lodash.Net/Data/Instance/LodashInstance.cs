@@ -14,13 +14,15 @@ namespace Lodash.Net.Data.Instance
         private readonly ILodashNumber _lodashNumber;
 
         private readonly ILodashUtil _lodashUtil;
+        private readonly ILodashLang _lodashLang;
 
-        public LodashInstance(ILodashDate lodashDate, ILodashMath lodashMath, ILodashNumber lodashNumber, ILodashUtil lodashUtil)
+        public LodashInstance(ILodashDate lodashDate, ILodashMath lodashMath, ILodashNumber lodashNumber, ILodashUtil lodashUtil, ILodashLang lodashLang)
         {
             _lodashDate = lodashDate;
             _lodashMath = lodashMath;
             _lodashNumber = lodashNumber;
             _lodashUtil = lodashUtil;
+            _lodashLang = lodashLang;
         }
 
         public long Now() => _lodashDate.Now();
@@ -84,5 +86,31 @@ namespace Lodash.Net.Data.Instance
         public Func<TObject, TProperty> Property<TObject, TProperty>(params string[] path) => _lodashUtil.Property<TObject, TProperty>(path);
 
         Func<object, object> ILodashUtil.Property(params string[] path) => _lodashUtil.Property(path);
+
+        public object[] CastArray(object obj) => _lodashLang.CastArray(obj);
+
+        public object[] CastArray(IEnumerable<object> enumerable) => _lodashLang.CastArray(enumerable);
+
+        public T[] CastArray<T>(T arr) => _lodashLang.CastArray(arr);
+
+        public T[] CastArray<T>(IEnumerable<T> enumerable) => _lodashLang.CastArray(enumerable);
+
+        public bool IsArray(object obj) => _lodashLang.IsArray(obj);
+
+        public bool IsArrayLike(object obj) => _lodashLang.IsArrayLike(obj);
+
+        public bool IsBoolean(object obj) => _lodashLang.IsBoolean(obj);
+
+        public bool IsDate(object obj) => _lodashLang.IsDate(obj);
+
+        public bool IsInteger(object obj) => _lodashLang.IsInteger(obj);
+
+        public bool IsNumber(object obj) => _lodashLang.IsNumber(obj);
+
+        public bool IsNil(object obj) => _lodashLang.IsNil(obj);
+
+        public bool IsNull(object obj) => _lodashLang.IsNull(obj);
+
+        public bool IsObject(object obj) => _lodashLang.IsObject(obj);
     }
 }

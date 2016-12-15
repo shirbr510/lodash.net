@@ -110,6 +110,7 @@
 --reference:C:\Git\lodash.net\src\Lodash.Net\bin\Debug\netstandard1.6\Lodash.Net.dll
 C:\Git\lodash.net\test\Lodash.Net.Tests\Program.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Methods\LodashDateTests.cs
+C:\Git\lodash.net\test\Lodash.Net.Tests\Methods\LodashLangTests.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Methods\LodashMathTests.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Methods\LodashNumberTests.cs
 C:\Git\lodash.net\test\Lodash.Net.Tests\Methods\Stubs\NumberStub.cs
