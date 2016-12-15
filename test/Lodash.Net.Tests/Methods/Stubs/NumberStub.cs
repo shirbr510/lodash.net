@@ -1,4 +1,4 @@
-﻿namespace Lodash.Net.Tests.Workers.Stubs
+﻿namespace Lodash.Net.Tests.Methods.Stubs
 {
     public class NumberStub
     {

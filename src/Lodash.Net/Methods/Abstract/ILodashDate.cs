@@ -1,4 +1,4 @@
-﻿namespace Lodash.Net.Workers.Abstract
+﻿namespace Lodash.Net.Methods.Abstract
 {
     public interface ILodashDate
     {

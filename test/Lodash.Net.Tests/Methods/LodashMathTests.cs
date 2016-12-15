@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Lodash.Net.Tests.Workers.Stubs;
-using Lodash.Net.Workers;
+using Lodash.Net.Methods;
+using Lodash.Net.Tests.Methods.Stubs;
 using NUnit.Framework;
 
-namespace Lodash.Net.Tests.Workers
+namespace Lodash.Net.Tests.Methods
 {
     [TestFixture]
     public class LodashMathTests

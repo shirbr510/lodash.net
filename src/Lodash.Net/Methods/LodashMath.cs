@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Lodash.Net.Extensions;
-using Lodash.Net.Workers.Abstract;
+using Lodash.Net.Methods.Abstract;
 
-namespace Lodash.Net.Workers
+namespace Lodash.Net.Methods
 {
     public class LodashMath : ILodashMath
     {

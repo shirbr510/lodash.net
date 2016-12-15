@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lodash.Net.Workers.Abstract
+namespace Lodash.Net.Methods.Abstract
 {
     public interface ILodashMath
     {

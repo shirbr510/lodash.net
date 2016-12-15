@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
-using Lodash.Net.Workers;
+using Lodash.Net.Methods;
 using NUnit.Framework;
 
-namespace Lodash.Net.Tests.Workers
+namespace Lodash.Net.Tests.Methods
 {
     [TestFixture]
     public class LodashDateTests

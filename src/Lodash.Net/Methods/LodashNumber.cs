@@ -1,9 +1,9 @@
 ﻿using System;
 using Lodash.Net.Extensions;
+using Lodash.Net.Methods.Abstract;
 using Lodash.Net.Randomizers.Abstract;
-using Lodash.Net.Workers.Abstract;
 
-namespace Lodash.Net.Workers
+namespace Lodash.Net.Methods
 {
     public class LodashNumber : ILodashNumber
     {

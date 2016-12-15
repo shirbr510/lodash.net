@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lodash.Net.Workers.Abstract
+namespace Lodash.Net.Methods.Abstract
 {
     //TODO: implement rest of LodashUtil
     public interface ILodashUtil

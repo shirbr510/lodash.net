@@ -1,10 +1,10 @@
 ﻿using System;
 using Lodash.Net.Data.Instance;
 using Lodash.Net.Data.Instance.Abstract;
+using Lodash.Net.Methods;
+using Lodash.Net.Methods.Abstract;
 using Lodash.Net.Randomizers;
 using Lodash.Net.Randomizers.Abstract;
-using Lodash.Net.Workers;
-using Lodash.Net.Workers.Abstract;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lodash.Net.DI

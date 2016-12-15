@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Lodash.Net.Extensions;
+using Lodash.Net.Methods;
 using Lodash.Net.Randomizers;
-using Lodash.Net.Workers;
 using NUnit.Framework;
 
-namespace Lodash.Net.Tests.Workers
+namespace Lodash.Net.Tests.Methods
 {
     [TestFixture]
     public class LodashNumberTests

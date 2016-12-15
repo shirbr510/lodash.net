@@ -1,4 +1,4 @@
-﻿using Lodash.Net.Workers.Abstract;
+﻿using Lodash.Net.Methods.Abstract;
 
 namespace Lodash.Net.Data.Instance.Abstract
 {
