@@ -30,6 +30,7 @@ namespace Lodash.Net.DI
 
             //Transients
             services.AddTransient<ILodashDate, LodashDate>();
+            services.AddTransient<ILodashLang, LodashLang>();
             services.AddTransient<ILodashMath, LodashMath>();
             services.AddTransient<ILodashNumber, LodashNumber>();
             services.AddTransient<ILodashUtil, LodashUtil>();
