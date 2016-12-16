@@ -56,7 +56,7 @@ namespace Lodash.Net.Methods.Abstract
         /// <param name="value">The value to compare.</param>
         /// <param name="other">The other value to compare.</param>
         /// <returns>Returns true if the values are equivalent, else false.</returns>
-        bool Eq<T>(T value, T other);
+        bool Eq<T>(T value, T other) where T : IComparable<T>;
 
         /// <summary>
         /// Checks if value is greater than other.

@@ -19,17 +19,11 @@ namespace Lodash.Net.Methods
 
         public T[] CastArray<T>(IEnumerable<T> enumerable) => IsArray(enumerable) ? (T[])enumerable : enumerable.ToArray();
 
-        public bool Eq(object value, object other)
-        {
-            return SameValueZero(value, other);
-        }
+        public bool Eq(object value, object other) => SameValueZero(value, other);
 
-        public bool Eq<T>(T value, T other) => SameValueZero(value, other);
+        public bool Eq<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) == 0;
 
-        public bool Gt<T>(T value, T other) where T : IComparable<T>
-        {
-            return value.CompareTo(other) > 0;
-        }
+        public bool Gt<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) > 0;
 
         public bool Gte<T>(T value, T other) where T : IComparable<T> => Gt(value, other) || Eq(value, other);
 
