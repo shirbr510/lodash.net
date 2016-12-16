@@ -97,7 +97,7 @@ namespace Lodash.Net.Data.Instance
 
         public bool Eq(object value, object other) => _lodashLang.Eq(value, other);
 
-        public bool Eq<T>(T value, T other) => _lodashLang.Eq(value, other);
+        public bool Eq<T>(T value, T other) where T : IComparable<T> => _lodashLang.Eq(value, other);
 
         public bool Gt<T>(T value, T other) where T : IComparable<T> => _lodashLang.Gt(value, other);
 

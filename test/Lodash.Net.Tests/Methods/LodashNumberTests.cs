@@ -18,7 +18,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = -5;
             const int upper = 5;
             const int number = -10;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.Clamp(number, lower, upper);
@@ -34,7 +34,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = -5;
             const int upper = 5;
             const int number = 10;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.Clamp(number, lower, upper);
@@ -50,7 +50,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = -5;
             const int upper = 5;
             const int number = 2;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.Clamp(number, lower, upper);
@@ -66,7 +66,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = 5;
             const int upper = -5;
             const int number = 2;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.Clamp(number, lower, upper);
@@ -86,7 +86,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = -5;
             const int upper = 5;
             const int number = -10;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.InRange(number, lower, upper);
@@ -102,7 +102,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = -5;
             const int upper = 5;
             const int number = 10;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.InRange(number, lower, upper);
@@ -118,7 +118,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = -5;
             const int upper = 5;
             const int number = 2;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.InRange(number, lower, upper);
@@ -134,7 +134,7 @@ namespace Lodash.Net.Tests.Methods
             const int lower = 5;
             const int upper = -5;
             const int number = 2;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.InRange(number, lower, upper);
@@ -149,7 +149,7 @@ namespace Lodash.Net.Tests.Methods
             //Arrange
             const int upper = 10;
             const int number = -5;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.InRange(number, upper);
@@ -164,7 +164,7 @@ namespace Lodash.Net.Tests.Methods
             //Arrange
             const int upper = 5;
             const int number = 5;
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             var result = lodashNumber.InRange(number, upper);
@@ -186,7 +186,7 @@ namespace Lodash.Net.Tests.Methods
             const bool floating = true;
             const int callCount = 1000000;
             var results = new double[callCount];
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             for (var i = 0; i < callCount; i++)
@@ -208,7 +208,7 @@ namespace Lodash.Net.Tests.Methods
             const bool floating = false;
             const int callCount = 1000000;
             var results = new double[callCount];
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             for (var i = 0; i < callCount; i++)
@@ -230,7 +230,7 @@ namespace Lodash.Net.Tests.Methods
             const bool floating = true;
             const int callCount = 1000000;
             var results = new double[callCount];
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             for (var i = 0; i < callCount; i++)
@@ -250,7 +250,7 @@ namespace Lodash.Net.Tests.Methods
             const int upper = 7;
             const int callCount = 1000000;
             var results = new double[callCount];
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             for (var i = 0; i < callCount; i++)
@@ -271,7 +271,7 @@ namespace Lodash.Net.Tests.Methods
             const int upper = -7;
             const int callCount = 1000000;
             var results = new double[callCount];
-            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new FloatingRandomizer());
+            var lodashNumber = new LodashNumber(new LodashMath(new LodashUtil()), new LodashLang(), new FloatingRandomizer());
 
             //Act
             for (var i = 0; i < callCount; i++)

@@ -10,9 +10,11 @@ namespace Lodash.Net.Methods
         private readonly IRandomizer<double> _random;
 
         private readonly ILodashMath _lodashMath;
+        private readonly ILodashLang _lodashLang;
 
-        public LodashNumber(ILodashMath lodashMath, IRandomizer<double> random)
+        public LodashNumber(ILodashMath lodashMath, ILodashLang lodashLang, IRandomizer<double> random)
         {
+            _lodashLang = lodashLang;
             _lodashMath = lodashMath;
             _random = random;
         }
@@ -26,7 +28,7 @@ namespace Lodash.Net.Methods
         public bool InRange<T>(T number, T start, T upper) where T : IComparable<T>
         {
             ValidateLowerSmallerThenUpper(ref start, ref upper);
-            return number.CompareTo(start) >= 0 && number.CompareTo(upper) < 0;
+            return _lodashLang.Lte(start, number) && _lodashLang.Lt(number, upper);
         }
 
         public bool InRange<T>(T number, T upper) where T : IComparable<T> => InRange(number, default(T), upper);
@@ -47,9 +49,9 @@ namespace Lodash.Net.Methods
             return floating ? result : (result < 0 ? _lodashMath.Ceil(result) : _lodashMath.Floor(result));
         }
 
-        private static void ValidateLowerSmallerThenUpper<T>(ref T lower, ref T upper) where T : IComparable<T>
+        private void ValidateLowerSmallerThenUpper<T>(ref T lower, ref T upper) where T : IComparable<T>
         {
-            if (lower.CompareTo(upper) > 0)
+            if (_lodashLang.Gt(lower, upper))
             {
                 var temp = lower;
                 lower = upper;
