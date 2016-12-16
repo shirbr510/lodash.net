@@ -95,6 +95,14 @@ namespace Lodash.Net.Data.Instance
 
         public T[] CastArray<T>(IEnumerable<T> enumerable) => _lodashLang.CastArray(enumerable);
 
+        public bool Eq(object value, object other) => _lodashLang.Eq(value, other);
+
+        public bool Eq<T>(T value, T other) => _lodashLang.Eq(value, other);
+
+        public bool Gt<T>(T value, T other) where T : IComparable<T> => _lodashLang.Gt(value, other);
+
+        public bool Gte<T>(T value, T other) where T : IComparable<T> => _lodashLang.Gte(value, other);
+
         public bool IsArray(object obj) => _lodashLang.IsArray(obj);
 
         public bool IsArrayLike(object obj) => _lodashLang.IsArrayLike(obj);
@@ -112,5 +120,9 @@ namespace Lodash.Net.Data.Instance
         public bool IsNull(object obj) => _lodashLang.IsNull(obj);
 
         public bool IsObject(object obj) => _lodashLang.IsObject(obj);
+
+        public bool Lt<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lt(value, other);
+
+        public bool Lte<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lte(value, other);
     }
 }

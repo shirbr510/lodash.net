@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Lodash.Net.Methods.Abstract
 {
@@ -37,6 +38,45 @@ namespace Lodash.Net.Methods.Abstract
         /// <param name="enumerable">The value to inspect.</param>
         /// <returns>Returns the cast array.</returns>
         T[] CastArray<T>(IEnumerable<T> enumerable);
+
+        /// <summary>
+        /// Performs a SameValueZero comparison between two values to determine if they are equivalent.
+        /// </summary>
+        /// <since>4.0.0</since>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="other">The other value to compare.</param>
+        /// <returns>Returns true if the values are equivalent, else false.</returns>
+        bool Eq(object value, object other);
+
+        /// <summary>
+        /// Performs a SameValueZero comparison between two values to determine if they are equivalent.
+        /// </summary>
+        /// <since>4.0.0</since>
+        /// <typeparam name="T">the type of the objects</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="other">The other value to compare.</param>
+        /// <returns>Returns true if the values are equivalent, else false.</returns>
+        bool Eq<T>(T value, T other);
+
+        /// <summary>
+        /// Checks if value is greater than other.
+        /// </summary>
+        /// <since>3.9.0</since>
+        /// <typeparam name="T">the type of the objects</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="other">The other value to compare.</param>
+        /// <returns>Returns true if value is greater than other, else false.</returns>
+        bool Gt<T>(T value, T other) where T : IComparable<T>;
+
+        /// <summary>
+        /// Checks if value is greater than or equal to other.
+        /// </summary>
+        /// <since>3.9.0</since>
+        /// <typeparam name="T">the type of the objects</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="other">The other value to compare.</param>
+        /// <returns>Returns true if value is greater than or equal to other, else false.</returns>
+        bool Gte<T>(T value, T other) where T : IComparable<T>;
 
         /// <summary>
         /// Checks if value is classified as an Array object.
@@ -109,5 +149,25 @@ namespace Lodash.Net.Methods.Abstract
         /// <param name="obj">The value to check.</param>
         /// <returns>Returns true if value is an object, else false.</returns>
         bool IsObject(object obj);
+
+        /// <summary>
+        /// Checks if value is less than other.
+        /// </summary>
+        /// <since>3.9.0</since>
+        /// <typeparam name="T">the type of the objects</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="other">The other value to compare.</param>
+        /// <returns>Returns true if value is less than other, else false.</returns>
+        bool Lt<T>(T value, T other) where T : IComparable<T>;
+
+        /// <summary>
+        /// Checks if value is less than or equal to other.
+        /// </summary>
+        /// <since>3.9.0</since>
+        /// <typeparam name="T">the type of the objects</typeparam>
+        /// <param name="value">The value to compare.</param>
+        /// <param name="other">The other value to compare.</param>
+        /// <returns>Returns true if value is less than or equal to other, else false.</returns>
+        bool Lte<T>(T value, T other) where T : IComparable<T>;
     }
 }
