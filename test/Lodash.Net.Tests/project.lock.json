@@ -2604,7 +2604,8 @@
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "1.1.0",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "8.0.3"
         },
         "compile": {
           "netstandard1.6/Lodash.Net.dll": {}

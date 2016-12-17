@@ -1,6 +1,6 @@
-﻿using Lodash.Net.Randomizers.Abstract;
+﻿using Lodash.Net.Logics.Randomizers.Abstract;
 
-namespace Lodash.Net.Randomizers
+namespace Lodash.Net.Logics.Randomizers
 {
     public class FloatingRandomizer : IRandomizer<double>
     {

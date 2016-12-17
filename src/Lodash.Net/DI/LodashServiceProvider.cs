@@ -1,10 +1,12 @@
 ﻿using System;
 using Lodash.Net.Data.Instance;
 using Lodash.Net.Data.Instance.Abstract;
+using Lodash.Net.Logics.Cloners;
+using Lodash.Net.Logics.Cloners.Abstract;
+using Lodash.Net.Logics.Randomizers;
+using Lodash.Net.Logics.Randomizers.Abstract;
 using Lodash.Net.Methods;
 using Lodash.Net.Methods.Abstract;
-using Lodash.Net.Randomizers;
-using Lodash.Net.Randomizers.Abstract;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lodash.Net.DI
@@ -27,6 +29,8 @@ namespace Lodash.Net.DI
             //Singletons
             services.AddSingleton<ILodashInstance, LodashInstance>();
             services.AddSingleton<IRandomizer<double>, FloatingRandomizer>();
+            services.AddSingleton<IDeepCloner, DeepObjectCloner>();
+            services.AddSingleton<IShallowCloner, ShallowObjectCloner>();
 
             //Transients
             services.AddTransient<ILodashDate, LodashDate>();

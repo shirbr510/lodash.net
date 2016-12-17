@@ -1199,7 +1199,8 @@
       "Lodash.Net/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "1.1.0",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
         },
         "runtime": {
           "Lodash.Net.dll": {}

@@ -2,12 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Lodash.Net.Logics.Cloners.Abstract;
 using Lodash.Net.Methods.Abstract;
 
 namespace Lodash.Net.Methods
 {
     public class LodashLang : ILodashLang
     {
+        private readonly IShallowCloner _cloner;
+
+        private readonly IDeepCloner _deepCloner;
+
+        public LodashLang(IShallowCloner cloner, IDeepCloner deepCloner)
+        {
+            _cloner = cloner;
+            _deepCloner = deepCloner;
+        }
+
         public object[] CastArray(object obj)
         {
             return IsArrayLike(obj) ? CastArray(obj as IEnumerable<object>) : new[] { obj };
@@ -19,25 +30,29 @@ namespace Lodash.Net.Methods
 
         public T[] CastArray<T>(IEnumerable<T> enumerable) => IsArray(enumerable) ? (T[])enumerable : enumerable.ToArray();
 
-        public object Clone(object obj)
-        {
-            throw new NotImplementedException();
-        }
 
-        public T Clone<T>(T obj)
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// Creates a shallow clone of value.
+        /// </summary>
+        /// <remarks>This method is loosely based on the structured clone algorithm and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps.</remarks>
+        /// <since>0.1.0</since>
+        /// <param name="obj">The value to clone.</param>
+        /// <returns>Returns the cloned value.</returns>
+        public object Clone(object obj) => _cloner.Clone(obj);
 
-        public object CloneDeep(object obj)
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// Creates a shallow clone of value.
+        /// </summary>
+        /// <remarks>This method is loosely based on the structured clone algorithm and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps.</remarks>
+        /// <since>0.1.0</since>
+        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <param name="obj">The value to clone.</param>
+        /// <returns>Returns the cloned value.</returns>
+        public T Clone<T>(T obj) => _cloner.Clone(obj);
 
-        public T CloneDeep<T>(T obj)
-        {
-            throw new NotImplementedException();
-        }
+        public object CloneDeep(object obj) => _deepCloner.Clone(obj);
+
+        public T CloneDeep<T>(T obj) => _deepCloner.Clone(obj);
 
         public bool Eq(object value, object other) => SameValueZero(value, other);
 

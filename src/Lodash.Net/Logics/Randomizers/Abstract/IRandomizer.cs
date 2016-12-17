@@ -1,4 +1,4 @@
-﻿namespace Lodash.Net.Randomizers.Abstract
+﻿namespace Lodash.Net.Logics.Randomizers.Abstract
 {
     public interface IRandomizer<out T>
     {

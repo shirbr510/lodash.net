@@ -1,7 +1,7 @@
 ﻿using System;
 using Lodash.Net.Extensions;
+using Lodash.Net.Logics.Randomizers.Abstract;
 using Lodash.Net.Methods.Abstract;
-using Lodash.Net.Randomizers.Abstract;
 
 namespace Lodash.Net.Methods
 {

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Lodash.Net.Logics.Cloners.Abstract;
 
 namespace Lodash.Net.Methods.Abstract
 {
-    public interface ILodashLang
+    public interface ILodashLang : ICloner
     {
         /// <summary>
         /// Casts value as an array if it's not one.
@@ -38,25 +39,6 @@ namespace Lodash.Net.Methods.Abstract
         /// <param name="enumerable">The value to inspect.</param>
         /// <returns>Returns the cast array.</returns>
         T[] CastArray<T>(IEnumerable<T> enumerable);
-
-        /// <summary>
-        /// Creates a shallow clone of value.
-        /// </summary>
-        /// <remarks>This method is loosely based on the structured clone algorithm and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps.</remarks>
-        /// <since>0.1.0</since>
-        /// <param name="obj">The value to clone.</param>
-        /// <returns>Returns the cloned value.</returns>
-        object Clone(object obj);
-
-        /// <summary>
-        /// Creates a shallow clone of value.
-        /// </summary>
-        /// <remarks>This method is loosely based on the structured clone algorithm and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps.</remarks>
-        /// <since>0.1.0</since>
-        /// <typeparam name="T">the type of the obj</typeparam>
-        /// <param name="obj">The value to clone.</param>
-        /// <returns>Returns the cloned value.</returns>
-        T Clone<T>(T obj);
 
         /// <summary>
         /// This method is like _.clone except that it recursively clones value.
