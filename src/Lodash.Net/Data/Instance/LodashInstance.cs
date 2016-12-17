@@ -95,6 +95,14 @@ namespace Lodash.Net.Data.Instance
 
         public T[] CastArray<T>(IEnumerable<T> enumerable) => _lodashLang.CastArray(enumerable);
 
+        public object Clone(object obj) => _lodashLang.Clone(obj);
+
+        public T Clone<T>(T obj) => _lodashLang.Clone(obj);
+
+        public object CloneDeep(object obj) => _lodashLang.CloneDeep(obj);
+
+        public T CloneDeep<T>(T obj) => _lodashLang.CloneDeep(obj);
+
         public bool Eq(object value, object other) => _lodashLang.Eq(value, other);
 
         public bool Eq<T>(T value, T other) where T : IComparable<T> => _lodashLang.Eq(value, other);

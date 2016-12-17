@@ -19,6 +19,26 @@ namespace Lodash.Net.Methods
 
         public T[] CastArray<T>(IEnumerable<T> enumerable) => IsArray(enumerable) ? (T[])enumerable : enumerable.ToArray();
 
+        public object Clone(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Clone<T>(T obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object CloneDeep(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T CloneDeep<T>(T obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Eq(object value, object other) => SameValueZero(value, other);
 
         public bool Eq<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) == 0;
