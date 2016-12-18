@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Lodash.Net.Logics.Cloners.Abstract;
 
@@ -35,7 +36,7 @@ namespace Lodash.Net.Methods.Abstract
         /// Casts value as an array if it's not one.
         /// </summary>
         /// <since>4.4.0</since>
-        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <typeparam name="T">the type of the enumerable</typeparam>
         /// <param name="enumerable">The value to inspect.</param>
         /// <returns>Returns the cast array.</returns>
         T[] CastArray<T>(IEnumerable<T> enumerable);
@@ -52,7 +53,7 @@ namespace Lodash.Net.Methods.Abstract
         /// This method is like _.clone except that it recursively clones value.
         /// </summary>
         /// <since>0.1.0</since>
-        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <typeparam name="T">the type of the enumerable</typeparam>
         /// <param name="obj">The value to recursively clone.</param>
         /// <returns>Returns the deep cloned value.</returns>
         T CloneDeep<T>(T obj);
@@ -61,7 +62,7 @@ namespace Lodash.Net.Methods.Abstract
         /// This method is like _.cloneWith except that it recursively clones value.
         /// </summary>
         /// <since>4.0.0</since>
-        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <typeparam name="T">the type of the enumerable</typeparam>
         /// <param name="obj">The value to recursively clone.</param>
         /// <param name="customizer">The function to customize cloning</param>
         /// <returns>Returns the deep cloned value.</returns>
@@ -71,7 +72,7 @@ namespace Lodash.Net.Methods.Abstract
         /// This method is like _.clone except that it accepts customizer which is invoked to produce the cloned value. If customizer returns undefined, cloning is handled by the method instead. The customizer is invoked with up to four arguments; (value [, index|key, object, stack]).
         /// </summary>
         /// <since>4.0.0</since>
-        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <typeparam name="T">the type of the enumerable</typeparam>
         /// <param name="obj">The value to recursively clone.</param>
         /// <param name="customizer">The function to customize cloning</param>
         /// <returns>Returns the deep cloned value.</returns>
@@ -82,7 +83,7 @@ namespace Lodash.Net.Methods.Abstract
         /// </summary>
         /// <since>4.14.0</since>
         /// <remarks>This method is equivalent to _.conforms when source is partially applied</remarks>
-        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <typeparam name="T">the type of the enumerable</typeparam>
         /// <param name="obj">The object to inspect.</param>
         /// <param name="source">The object of property predicates to conform to.</param>
         /// <returns>Returns true if object conforms, else false.</returns>
@@ -207,6 +208,25 @@ namespace Lodash.Net.Methods.Abstract
         /// <param name="obj">The value to check.</param>
         /// <returns>Returns true if value is empty, else false.</returns>
         bool IsEmpty(object obj);
+
+        /// <summary>
+        /// Checks if value is an empty object, collection, map, or set.
+        /// </summary>
+        /// <since>0.1.0</since>
+        /// <remarks>Objects are considered empty if they have no own enumerable string keyed properties. Array-like values such as arguments objects, arrays, buffers, strings, or jQuery-like collections are considered empty if they have a length of 0. Similarly, maps and sets are considered empty if they have a size of 0.</remarks>
+        /// <param name="enumerable">The value to check.</param>
+        /// <returns>Returns true if value is empty, else false.</returns>
+        bool IsEmpty(IEnumerable enumerable);
+
+        /// <summary>
+        /// Checks if value is an empty object, collection, map, or set.
+        /// </summary>
+        /// <since>0.1.0</since>
+        /// <typeparam name="T">the type of the objects</typeparam>
+        /// <remarks>Objects are considered empty if they have no own enumerable string keyed properties. Array-like values such as arguments objects, arrays, buffers, strings, or jQuery-like collections are considered empty if they have a length of 0. Similarly, maps and sets are considered empty if they have a size of 0.</remarks>
+        /// <param name="enumerable">The value to check.</param>
+        /// <returns>Returns true if value is empty, else false.</returns>
+        bool IsEmpty<T>(IEnumerable<T> enumerable);
 
         /// <summary>
         /// Checks if value is an integer.
