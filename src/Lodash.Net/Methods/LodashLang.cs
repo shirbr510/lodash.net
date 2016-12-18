@@ -54,6 +54,21 @@ namespace Lodash.Net.Methods
 
         public T CloneDeep<T>(T obj) => _deepCloner.Clone(obj);
 
+        public T CloneDeepWith<T>(T obj, Func<T, T> customizer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T CloneWith<T>(T obj, Func<T, T> customizer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ConfromsTo(object obj, object source)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Eq(object value, object other) => SameValueZero(value, other);
 
         public bool Eq<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) == 0;
@@ -62,13 +77,43 @@ namespace Lodash.Net.Methods
 
         public bool Gte<T>(T value, T other) where T : IComparable<T> => Gt(value, other) || Eq(value, other);
 
+        public bool IsArguments(object value)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsArray(object obj) => IsObject(obj) && obj.GetType().IsArray;
+
+        public bool IsArrayBuffer(object obj)
+        {
+            throw new NotImplementedException();
+        }
 
         public bool IsArrayLike(object obj) => IsObject(obj) && obj is IEnumerable;
 
+        public bool IsArrayLikeObject(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsBoolean(object obj) => obj is bool;
 
+        public bool IsBuffer(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsDate(object obj) => obj is DateTime;
+
+        public bool IsElement(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsEmpty(object obj)
+        {
+            throw new NotImplementedException();
+        }
 
         public bool IsInteger(object obj)
         {

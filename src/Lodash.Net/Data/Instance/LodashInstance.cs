@@ -103,6 +103,12 @@ namespace Lodash.Net.Data.Instance
 
         public T CloneDeep<T>(T obj) => _lodashLang.CloneDeep(obj);
 
+        public T CloneDeepWith<T>(T obj, Func<T, T> customizer) => _lodashLang.CloneDeepWith(obj, customizer);
+
+        public T CloneWith<T>(T obj, Func<T, T> customizer) => _lodashLang.CloneWith(obj, customizer);
+
+        public bool ConfromsTo(object obj, object source) => _lodashLang.ConfromsTo(obj, source);
+
         public bool Eq(object value, object other) => _lodashLang.Eq(value, other);
 
         public bool Eq<T>(T value, T other) where T : IComparable<T> => _lodashLang.Eq(value, other);
@@ -111,13 +117,25 @@ namespace Lodash.Net.Data.Instance
 
         public bool Gte<T>(T value, T other) where T : IComparable<T> => _lodashLang.Gte(value, other);
 
+        public bool IsArguments(object value) => _lodashLang.IsArguments(value);
+
         public bool IsArray(object obj) => _lodashLang.IsArray(obj);
+
+        public bool IsArrayBuffer(object obj) => _lodashLang.IsArrayBuffer(obj);
 
         public bool IsArrayLike(object obj) => _lodashLang.IsArrayLike(obj);
 
+        public bool IsArrayLikeObject(object obj) => _lodashLang.IsArrayLike(obj);
+
         public bool IsBoolean(object obj) => _lodashLang.IsBoolean(obj);
 
+        public bool IsBuffer(object obj) => _lodashLang.IsBuffer(obj);
+
         public bool IsDate(object obj) => _lodashLang.IsDate(obj);
+
+        public bool IsElement(object obj) => _lodashLang.IsElement(obj);
+
+        public bool IsEmpty(object obj) => _lodashLang.IsEmpty(obj);
 
         public bool IsInteger(object obj) => _lodashLang.IsInteger(obj);
 
