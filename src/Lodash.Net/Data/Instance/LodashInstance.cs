@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Lodash.Net.Data.Instance.Abstract;
 using Lodash.Net.Methods.Abstract;
@@ -136,6 +137,10 @@ namespace Lodash.Net.Data.Instance
         public bool IsElement(object obj) => _lodashLang.IsElement(obj);
 
         public bool IsEmpty(object obj) => _lodashLang.IsEmpty(obj);
+
+        public bool IsEmpty(IEnumerable enumerable) => _lodashLang.IsEmpty(enumerable);
+
+        public bool IsEmpty<T>(IEnumerable<T> enumerable) => _lodashLang.IsEmpty(enumerable);
 
         public bool IsInteger(object obj) => _lodashLang.IsInteger(obj);
 

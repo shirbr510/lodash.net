@@ -45,7 +45,7 @@ namespace Lodash.Net.Methods
         /// </summary>
         /// <remarks>This method is loosely based on the structured clone algorithm and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps.</remarks>
         /// <since>0.1.0</since>
-        /// <typeparam name="T">the type of the obj</typeparam>
+        /// <typeparam name="T">the type of the enumerable</typeparam>
         /// <param name="obj">The value to clone.</param>
         /// <returns>Returns the cloned value.</returns>
         public T Clone<T>(T obj) => _cloner.Clone(obj);
@@ -89,12 +89,9 @@ namespace Lodash.Net.Methods
             throw new NotImplementedException();
         }
 
-        public bool IsArrayLike(object obj) => IsObject(obj) && obj is IEnumerable;
+        public bool IsArrayLike(object obj) => obj is IEnumerable;
 
-        public bool IsArrayLikeObject(object obj)
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsArrayLikeObject(object obj) => IsObject(obj) && IsArrayLike(obj);
 
         public bool IsBoolean(object obj) => obj is bool;
 
@@ -112,8 +109,13 @@ namespace Lodash.Net.Methods
 
         public bool IsEmpty(object obj)
         {
-            throw new NotImplementedException();
+            var enumerable = obj as IEnumerable;
+            return enumerable != null && IsEmpty(enumerable);
         }
+
+        public bool IsEmpty(IEnumerable enumerable) => IsEmpty(enumerable.Cast<object>());
+
+        public bool IsEmpty<T>(IEnumerable<T> enumerable) => !enumerable.Any();
 
         public bool IsInteger(object obj)
         {
