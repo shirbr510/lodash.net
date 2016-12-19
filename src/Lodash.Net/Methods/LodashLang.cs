@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Lodash.Net.Logics.Cloners.Abstract;
 using Lodash.Net.Methods.Abstract;
+using Microsoft.AspNetCore.Html.Abstractions;
 
 namespace Lodash.Net.Methods
 {
@@ -86,7 +87,7 @@ namespace Lodash.Net.Methods
 
         public bool IsArrayBuffer(object obj)
         {
-            throw new NotImplementedException();
+            return obj is byte[];
         }
 
         public bool IsArrayLike(object obj) => obj is IEnumerable;
@@ -104,7 +105,7 @@ namespace Lodash.Net.Methods
 
         public bool IsElement(object obj)
         {
-            throw new NotImplementedException();
+            return obj is IHtmlString;
         }
 
         public bool IsEmpty(object obj)
