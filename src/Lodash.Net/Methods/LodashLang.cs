@@ -117,6 +117,30 @@ namespace Lodash.Net.Methods
         public bool IsEmpty(IEnumerable enumerable) => IsEmpty(enumerable.Cast<object>());
 
         public bool IsEmpty<T>(IEnumerable<T> enumerable) => !enumerable.Any();
+        public bool IsEqual(object value, object other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsEqualWith(object value, object other, Func<object, bool> customizer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsError(object value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsFinite(object value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsFunction(object value)
+        {
+            throw new NotImplementedException();
+        }
 
         public bool IsInteger(object obj)
         {

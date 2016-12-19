@@ -142,6 +142,16 @@ namespace Lodash.Net.Data.Instance
 
         public bool IsEmpty<T>(IEnumerable<T> enumerable) => _lodashLang.IsEmpty(enumerable);
 
+        public bool IsEqual(object value, object other) => _lodashLang.IsEqual(value, other);
+
+        public bool IsEqualWith(object value, object other, Func<object, bool> customizer) => _lodashLang.IsEqualWith(value, other, customizer);
+
+        public bool IsError(object value) => _lodashLang.IsError(value);
+
+        public bool IsFinite(object value) => _lodashLang.IsFinite(value);
+
+        public bool IsFunction(object value) => _lodashLang.IsFunction(value);
+
         public bool IsInteger(object obj) => _lodashLang.IsInteger(obj);
 
         public bool IsNumber(object obj) => _lodashLang.IsNumber(obj);

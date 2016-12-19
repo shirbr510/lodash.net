@@ -229,6 +229,52 @@ namespace Lodash.Net.Methods.Abstract
         bool IsEmpty<T>(IEnumerable<T> enumerable);
 
         /// <summary>
+        /// Performs a deep comparison between two values to determine if they are equivalent.
+        /// </summary>
+        /// <since>0.1.0</since>
+        /// <remarks>This method supports comparing arrays, array buffers, booleans, date objects, error objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. Object objects are compared by their own, not inherited, enumerable properties. Functions and DOM nodes are not supported.</remarks>
+        /// <param name="value">The value to compare</param>
+        /// <param name="other">The other value to compare</param>
+        /// <returns>Returns true if the values are equivalent, else false.</returns>
+        bool IsEqual(object value, object other);
+
+        /// <summary>
+        /// This method is like _.isEqual except that it accepts customizer which is invoked to compare values. If customizer returns undefined, comparisons are handled by the method instead. The customizer is invoked with up to six arguments: (objValue, othValue [, index|key, object, other, stack]).
+        /// </summary>
+        /// <since>4.0.0</since>
+        /// <param name="value">The value to compare</param>
+        /// <param name="other">The other value to compare</param>
+        /// <param name="customizer">The function to customize comparisons</param>
+        /// <returns>Returns true if the values are equivalent, else false.</returns>
+        bool IsEqualWith(object value, object other, Func<object, bool> customizer);
+
+        /// <summary>
+        /// Checks if value is an Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, or URIError object.
+        /// </summary>
+        /// <since>3.0.0</since>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns true if value is an error object, else false.</returns>
+        bool IsError(object value);
+
+        /// <summary>
+        /// Checks if value is a finite primitive number.
+        /// </summary>
+        /// <since>0.1.0</since>
+        /// <remarks>This method is based on Number.isFinite.</remarks>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns true if value is a finite number, else false.</returns>
+        bool IsFinite(object value);
+
+        /// <summary>
+        /// Checks if value is classified as a Function object.
+        /// </summary>
+        /// <since>0.1.0</since>
+        /// <remarks>This method is based on Number.isFinite.</remarks>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns true if value is a function, else false.</returns>
+        bool IsFunction(object value);
+
+        /// <summary>
         /// Checks if value is an integer.
         /// </summary>
         /// <since>4.0.0</since>
