@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Lodash.Net.Extensions;
 using Lodash.Net.Logics.Cloners.Abstract;
 using Lodash.Net.Methods.Abstract;
 using Microsoft.AspNetCore.Html;
@@ -127,20 +128,19 @@ namespace Lodash.Net.Methods
             throw new NotImplementedException();
         }
 
-        public bool IsError(object value)
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsError(object value) => value is Exception;
 
         public bool IsFinite(object value)
         {
-            throw new NotImplementedException();
+            if (!IsNumber(value))
+            {
+                return false;
+            }
+            var num = (double)value;
+            return !(double.IsInfinity(num) || double.IsNaN(num));
         }
 
-        public bool IsFunction(object value)
-        {
-            throw new NotImplementedException();
-        }
+        public bool IsFunction(object value) => value is Delegate;
 
         public bool IsInteger(object obj)
         {
