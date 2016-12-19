@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Lodash.Net.Logics.Cloners.Abstract;
 using Lodash.Net.Methods.Abstract;
-using Microsoft.AspNetCore.Html.Abstractions;
+using Microsoft.AspNetCore.Html;
 
 namespace Lodash.Net.Methods
 {
@@ -105,7 +105,7 @@ namespace Lodash.Net.Methods
 
         public bool IsElement(object obj)
         {
-            return obj is IHtmlString;
+            return obj is IHtmlContent;
         }
 
         public bool IsEmpty(object obj)
