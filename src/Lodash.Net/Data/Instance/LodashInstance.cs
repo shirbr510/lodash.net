@@ -156,6 +156,8 @@ namespace Lodash.Net.Data.Instance
 
         public bool IsLength(object value) => _lodashLang.IsLength(value);
 
+        public bool IsMap(object value) => _lodashLang.IsMap(value);
+
         public bool IsNumber(object obj) => _lodashLang.IsNumber(obj);
 
         public bool IsNil(object obj) => _lodashLang.IsNil(obj);

@@ -165,6 +165,11 @@ namespace Lodash.Net.Methods
                 valueAsLong > 0;
         }
 
+        public bool IsMap(object value)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsNumber(object obj) => IsInteger(obj) ||
                                             obj is uint ||
                                             obj is long ||

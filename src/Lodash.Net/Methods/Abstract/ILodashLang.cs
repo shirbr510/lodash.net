@@ -292,6 +292,14 @@ namespace Lodash.Net.Methods.Abstract
         bool IsLength(object value);
 
         /// <summary>
+        /// Checks if value is classified as a Map object.
+        /// </summary>
+        /// <since>4.3.0</since>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns true if value is a map, else false.</returns>
+        bool IsMap(object value);
+
+        /// <summary>
         /// Checks if value is classified as a boolean primitive or object.
         /// </summary>
         /// <since>0.1.0</since>
