@@ -283,6 +283,15 @@ namespace Lodash.Net.Methods.Abstract
         bool IsInteger(object obj);
 
         /// <summary>
+        /// Checks if value is a valid array-like length.
+        /// </summary>
+        /// <since>4.0.0</since>
+        /// <remarks>This method is loosely based on ToLength.</remarks>
+        /// <param name="value">The value to check.</param>
+        /// <returns>Returns true if value is a valid length, else false.</returns>
+        bool IsLength(object value);
+
+        /// <summary>
         /// Checks if value is classified as a boolean primitive or object.
         /// </summary>
         /// <since>0.1.0</since>

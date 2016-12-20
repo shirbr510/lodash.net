@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using Lodash.Net.Extensions;
 using Lodash.Net.Logics.Cloners.Abstract;
 using Lodash.Net.Methods.Abstract;
 using Microsoft.AspNetCore.Html;
@@ -155,6 +155,14 @@ namespace Lodash.Net.Methods
                    obj is ushort ||
                    obj is int ||
                    obj is char;
+        }
+
+        public bool IsLength(object value)
+        {
+            long valueAsLong;
+            return IsNumber(value) &&
+                long.TryParse(value.ToString(), out valueAsLong) &&
+                valueAsLong > 0;
         }
 
         public bool IsNumber(object obj) => IsInteger(obj) ||
