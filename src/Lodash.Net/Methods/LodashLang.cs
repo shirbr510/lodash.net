@@ -240,5 +240,15 @@ namespace Lodash.Net.Methods
             }
             return value == other;
         }
+
+        public bool IsNaN(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsNative(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

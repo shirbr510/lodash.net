@@ -169,5 +169,15 @@ namespace Lodash.Net.Data.Instance
         public bool Lt<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lt(value, other);
 
         public bool Lte<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lte(value, other);
+
+        public bool IsNaN(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsNative(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -300,6 +300,24 @@ namespace Lodash.Net.Methods.Abstract
         bool IsMap(object value);
 
         /// <summary>
+        /// Checks if value is NaN.
+        /// </summary>
+        /// <since>0.1.0</since>
+        /// <remarks>This method is based on Number.isNaN and is not the same as global isNaN which returns true for undefined and other non-number values.</remarks>
+        /// <param name="obj">The value to check.</param>
+        /// <returns>Returns true if value is NaN, else false.</returns>
+        bool IsNaN(object obj);
+
+        /// <summary>
+        /// Checks if value is a pristine native function.
+        /// </summary>
+        /// <since>3.0.0</since>
+        /// <remarks>This method can't reliably detect native functions in the presence of the core-js package because core-js circumvents this kind of detection. Despite multiple requests, the core-js maintainer has made it clear: any attempt to fix the detection will be obstructed. As a result, we're left with little choice but to throw an error. Unfortunately, this also affects packages, like babel-polyfill, which rely on core-js.</remarks>
+        /// <param name="obj">The value to check.</param>
+        /// <returns>Returns true if value is a native function, else false.</returns>
+        bool IsNative(object obj);
+
+        /// <summary>
         /// Checks if value is classified as a boolean primitive or object.
         /// </summary>
         /// <since>0.1.0</since>
