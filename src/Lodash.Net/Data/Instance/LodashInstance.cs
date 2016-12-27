@@ -170,6 +170,8 @@ namespace Lodash.Net.Data.Instance
 
         public bool IsObject(object obj) => _lodashLang.IsObject(obj);
 
+        public bool IsObjectLike(object obj) => _lodashLang.IsObjectLike(obj);
+
         public bool Lt<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lt(value, other);
 
         public bool Lte<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lte(value, other);

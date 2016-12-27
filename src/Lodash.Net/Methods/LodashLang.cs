@@ -195,6 +195,8 @@ namespace Lodash.Net.Methods
 
         public bool IsObject(object obj) => !IsNull(obj);
 
+        public bool IsObjectLike(object obj) => IsObject(obj) && !IsFunction(obj);
+
         public bool Lt<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) < 0;
 
         public bool Lte<T>(T value, T other) where T : IComparable<T> => Lt(value, other) || Eq(value, other);

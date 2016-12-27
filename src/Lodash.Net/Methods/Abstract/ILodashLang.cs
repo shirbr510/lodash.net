@@ -350,6 +350,14 @@ namespace Lodash.Net.Methods.Abstract
         bool IsObject(object obj);
 
         /// <summary>
+        /// Checks if value is object-like. A value is object-like if it's not null and has a typeof result of "object".
+        /// </summary>
+        /// <since>4.0.0</since>
+        /// <param name="obj">The value to check.</param>
+        /// <returns>Returns true if value is object-like, else false.</returns>
+        bool IsObjectLike(object obj);
+
+        /// <summary>
         /// Checks if value is less than other.
         /// </summary>
         /// <since>3.9.0</since>
