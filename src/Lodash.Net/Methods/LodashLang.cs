@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using Lodash.Net.Logics.Cloners.Abstract;
 using Lodash.Net.Methods.Abstract;
 using Microsoft.AspNetCore.Html;
@@ -170,22 +171,48 @@ namespace Lodash.Net.Methods
             throw new NotImplementedException();
         }
 
-        public bool IsNumber(object obj) => IsInteger(obj) ||
-                                            obj is uint ||
-                                            obj is long ||
-                                            obj is float ||
-                                            obj is double ||
-                                            obj is decimal;
+        public bool IsNaN(object obj)
+        {
+            return IsNumber(obj) && double.IsNaN((double)obj);
+        }
+
+        public bool IsNative(object obj)
+        {
+            var func = obj as Delegate;
+            return func != null ? IsNative(func) : IsNative(obj.GetType());
+        }
 
         public bool IsNil(object obj) => IsNull(obj);
 
         public bool IsNull(object obj) => obj == null;
+
+        public bool IsNumber(object obj) => IsInteger(obj) ||
+                                    obj is uint ||
+                                    obj is long ||
+                                    obj is float ||
+                                    obj is double ||
+                                    obj is decimal;
 
         public bool IsObject(object obj) => !IsNull(obj);
 
         public bool Lt<T>(T value, T other) where T : IComparable<T> => value.CompareTo(other) < 0;
 
         public bool Lte<T>(T value, T other) where T : IComparable<T> => Lt(value, other) || Eq(value, other);
+
+        private static bool IsNative(Delegate func)
+        {
+            var type = func.GetMethodInfo().DeclaringType;
+            return IsNative(type);
+        }
+
+        private static bool IsNative(Type type)
+        {
+            return
+            type == typeof(string) ||
+            type == typeof(decimal) ||
+            type.GetTypeInfo().IsPrimitive ||
+            Convert.GetTypeCode(type) != TypeCode.Object;
+        }
 
         /// <summary>
         /// 
@@ -239,16 +266,6 @@ namespace Lodash.Net.Methods
                 return (char)value == (char)other;
             }
             return value == other;
-        }
-
-        public bool IsNaN(object obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsNative(object obj)
-        {
-            throw new NotImplementedException();
         }
     }
 }

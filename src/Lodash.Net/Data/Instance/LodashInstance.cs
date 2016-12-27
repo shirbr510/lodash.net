@@ -158,11 +158,15 @@ namespace Lodash.Net.Data.Instance
 
         public bool IsMap(object value) => _lodashLang.IsMap(value);
 
-        public bool IsNumber(object obj) => _lodashLang.IsNumber(obj);
+        public bool IsNaN(object obj) => _lodashLang.IsNaN(obj);
+
+        public bool IsNative(object obj) => _lodashLang.IsNaN(obj);
 
         public bool IsNil(object obj) => _lodashLang.IsNil(obj);
 
         public bool IsNull(object obj) => _lodashLang.IsNull(obj);
+
+        public bool IsNumber(object obj) => _lodashLang.IsNumber(obj);
 
         public bool IsObject(object obj) => _lodashLang.IsObject(obj);
 
@@ -170,14 +174,5 @@ namespace Lodash.Net.Data.Instance
 
         public bool Lte<T>(T value, T other) where T : IComparable<T> => _lodashLang.Lte(value, other);
 
-        public bool IsNaN(object obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsNative(object obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
